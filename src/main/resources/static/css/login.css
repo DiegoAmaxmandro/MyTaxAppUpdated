@@ -1,6 +1,6 @@
 
 *{
-	background: red;
+	background: white;
     margin:0;
     border:0;
     padding: 0;
@@ -9,7 +9,7 @@
 }
 
 body{
-    background: red;
+    background: #0095ff;
     background-repeat: no-repeat;
     min-height: 100vh;
     min-width: 100vh;
@@ -20,7 +20,7 @@ body{
 
 
 main.container{
-    background: red;
+    background: white;
     max-width: 350px;
     min-height: 40vh;
     padding: 2rem;
@@ -47,7 +47,7 @@ main h2::before{
     bottom: 3px;
     left: 0;
     border-radius: 8px;
-    background:#ff1e0e;
+    background:rgb(24, 139, 234);
  
 }
 
@@ -95,44 +95,3 @@ form input[id = "sub"]:hover{
 
 
 
-/* Css for page2*/
-
-main.container1{
-    background: white;
-    max-width: 800px;
-    min-height: 40vh;
-    padding: 3rem;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-    border-radius: 8px;
-}
-
-#h12{
-    font-weight: 600;
-    margin-bottom: 2rem;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    margin-left: 34%;
-}
-
-.send{
-    margin-top: 2rem;
-    padding: 0.4rem;
-    background: grey;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 300;
-    border-radius: 4px;
-    transition: 0.3s ease;
-    width: 30%;
-    margin-left: 34%;
-}
-
-
-.send{
-    letter-spacing: 0.5px;
-
-}
-.send:hover{
-    background-color: deepskyblue;
-}

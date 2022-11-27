@@ -1,0 +1,72 @@
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="~{base::head}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body>
+<div th:replace="~{base::logo}"></div>
+	<div class="container">
+	<div th:replace="~{base :: titulo('My Profile')}"></div>
+	 <div class="card mt-3">
+		<form th:object="${requestMyProfile}" action="/admin/myProfile"  class="card-body" method="POST" >
+			<div class="form-group">
+				<label for="name">First Name</label>
+				<input th:field="*{name}" class="form-control" th:errorclass="is-invalid" placeholder="first name">
+				<small>Please tell us your first name</small>
+			</div>
+			<div class="form-group">
+				<label for="lastName">Last Name</label>
+				<input th:field="*{lastName}" class="form-control" th:errorclass="is-invalid" placeholder="last name">
+				<small>Please tell us your last name</small>
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input th:field="*{email}" class="form-control" th:errorclass="is-invalid"  placeholder="email">
+				<small>Please tell us your email</small>
+			</div>
+			<div class="form-group">
+				<label for="city">City</label>
+				<input th:field="*{city}" class="form-control" th:errorclass="is-invalid" placeholder="city">
+				<small>Please tell in which city you are located</small>
+			</div>
+			<div class="form-group">
+				<label for="phone">Phone</label>
+				<input th:field="*{phone}" class="form-control" th:errorclass="is-invalid" placeholder="Phone Number">
+				<small>Please tell your phone number</small>
+			</div>
+			<div class="form-group">
+				<label for="specialty">Specialty</label>
+				<input th:field="*{specialty}" class="form-control" th:errorclass="is-invalid" placeholder="specialty">
+				<small>What are your specialty?</small>
+			</div>
+			<div class="form-group">
+				<label for="language">Language</label>
+				<input th:field="*{language}" class="form-control" th:errorclass="is-invalid" placeholder="language">
+				<small>Which languages do you speak?</small>
+			</div>
+			<div class="form-group">
+				<label for="picture">Picture</label>
+				<input th:field="*{picture}" class="form-control" th:errorclass="is-invalid" placeholder="picture">
+				<small>Please set a profile picture here</small>
+			</div>
+			<div class="form-group">
+				<label for="price">Price</label>
+				<input th:field="*{price}" class="form-control" th:errorclass="is-invalid" placeholder="price">
+				<small>Please set your range of price here</small>
+			</div>
+			<div class="form-group">
+				<label for="aboutYou">About you</label>
+				<textarea th:field="*{aboutYou}" class="form-control" th:errorclass="is-invalid" placeholder="about you"></textarea>
+				<small>Please tell us about yourself</small>
+			</div >
+				<button class="btn btn-primary" type="submit">Submit</button>
+			
+		
+		</form>
+	
+		</div>
+	</div>
+
+</body>
+</html>

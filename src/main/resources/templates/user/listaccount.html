@@ -1,0 +1,27 @@
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:replace="~{base::head}">
+
+
+</head>
+<body>
+<div th:replace="~{base::logo}"></div>
+<div th:replace="~{base :: titulo('Find An Accountant')}"></div>
+	<div th:each="accountants : ${accountants}" class="container">
+	
+		<div th:text="${accountants.name}"> First Name<span> Diego</span></div>
+		<div th:text="${accountants.lastName}"> Last Name<span> Lemos</span></div>
+		<div th:text="${accountants.email}"> Email<span> exemplo@gmail.com</span></div>
+		<div th:text="${accountants.city}"> City<span> Dublin</span></div>
+		<div th:text="${accountants.phone}"> Phone<span> 0000000001</span></div>
+		<div th:text="${accountants.specialty}"> Specialty<span> Tax return</span></div>
+		<div th:text="${accountants.language}"> Language<span> Portuguese, English</span></div>
+		<div th:text="${accountants.picture}"> PictureAA <img src=""/></div>
+		<div th:text="${accountants.price}"> Price<span> 70,00 p/h</span></div>
+		<div th:text="${accountants.aboutYou}">About me<span> I am good!</span> </div>
+	
+	
+	</div>
+
+</body>
+</html>
