@@ -6,11 +6,11 @@
 </head>
 <body>
 <div th:replace="~{base::logo}"></div>
-  <h2>Welcome to Admin Dashboard</h2>
+  <h2>Welcome to Accountant Dashboard</h2>
   <p>Logged as: <span sec:authentication="name"></span></p>
   <p>Has role: <span sec:authentication="authorities"></span></p>
   <p><a th:href="@{/home}">Home</a></p>
   <p><a th:href="@{/logout}">Log out</a></p>
-  <p><a th:href="@{/admin/profileForm}">MyProfile</a></p>
+  <p><a th:href="@{/ccountant/profileForm}">MyProfile</a></p>
 </body>
 </html>

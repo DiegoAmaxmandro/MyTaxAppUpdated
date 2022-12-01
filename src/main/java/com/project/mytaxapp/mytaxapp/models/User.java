@@ -65,7 +65,7 @@ public class User implements UserDetails  {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
+    
     @Enumerated(EnumType.STRING)
     private Role role;
 

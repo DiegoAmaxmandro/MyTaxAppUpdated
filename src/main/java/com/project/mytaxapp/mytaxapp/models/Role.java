@@ -2,7 +2,7 @@ package com.project.mytaxapp.mytaxapp.models;
 
 public enum Role {
     USER("User"),
-    ADMIN("Admin");
+    ACCOUNTANT("Accountant");
 
     private final String value;
 

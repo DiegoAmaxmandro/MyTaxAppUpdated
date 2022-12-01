@@ -10,5 +10,10 @@ public class HomeController {
 	public String home() {
 		return "home";
 	}
+	
+//	@GetMapping("/dash")
+//	public String dash() {
+//		return "dash";
+//	}
 
 }

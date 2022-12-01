@@ -35,8 +35,8 @@ public class CustomLoginSucessHandler extends SimpleUrlAuthenticationSuccessHand
         for(GrantedAuthority a : authorities){
             roles.add(a.getAuthority());
         }
-        if(roles.contains("ADMIN")){
-            url = "/admin/dashboard";
+        if(roles.contains("ACCOUNTANT")){
+            url = "/accountant/dashboard";
         }else if(roles.contains("USER")) {
             url = "/dashboard";
         }
