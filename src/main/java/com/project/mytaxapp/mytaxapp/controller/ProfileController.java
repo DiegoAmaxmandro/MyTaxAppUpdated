@@ -14,25 +14,25 @@ import com.project.mytaxapp.mytaxapp.models.AccountantsProfile;
 import com.project.mytaxapp.mytaxapp.repository.ListAccountantRepository;
 
 @Controller
-@RequestMapping("admin")
+@RequestMapping("accountant")
 public class ProfileController {
 	@Autowired
 	private ListAccountantRepository listAccRepository;
 	
 	@GetMapping("profileForm")
 	public String profile(RequestMyProfile request) {
-		return "admin/profileForm";
+		return "accountant/profileForm";
 	}
 	
 	@PostMapping("myProfile")
 	public String myProfile(@Valid RequestMyProfile request, BindingResult result ) {
 		if(result.hasErrors()) {
-			return "admin/profileForm";
+			return "accountant/profileForm";
 		}
 		
 		AccountantsProfile accProfile = request.toAccountantsProfile();
 		listAccRepository.save(accProfile);
-		return "admin/dashboard";
+		return "accountant/dashboard";
 	}
 
 }

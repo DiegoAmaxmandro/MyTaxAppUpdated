@@ -1,16 +1,44 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org" lang="en">
 <head>
-  <title>User Dashboard</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link th:href="@{/css/dash.css}" rel="stylesheet" />
+	<title>MyTaxApp</title>
+	
 </head>
+
 <body>
-  <h2>Welcome to User Dashboard</h2>
-  <p>Logged as: <span sec:authentication="name"></span></p>
-  <p>Has role: <span sec:authentication="authorities"></span></p>
-  <div>
-    <p><a th:href="@{/}">Home</a></p>
-    <p><a th:href="@{/logout}">Log out</a></p>
-     <p><a th:href="@{/user/listaccount}">Find an accountant</a></p>
-  </div>
+	<header class="header">
+		<img class="logo" th:src="@{/img/logo.png}" height="100" width="100">
+		<nav class="navbar">
+			<!--<p class="navitem">Welcome Back  <span sec:authentication="name"></span></p>-->
+			<a th:href="@{/user/listaccount}" class="navitem">Find An Accountant</a>
+			<a th:href="@{/logout}" class="navitem">Logout</a>
+		</nav>
+	
+	</header>
+	
+	<main class="content">
+		<section class="primary-content">
+			<div class="hcontent">
+				<h1 class="h1">MyTaxApp</h1>
+				<h2 class="h2">We are here to help you to organize your taxes.</h2>
+			</div>
+			
+			<img class="img" th:src="@{/img/dash1.svg}" height="800" width="800">
+		
+		</section>
+			
+	</main>
+	
+	<footer>
+	
+	</footer>
+
+
+
 </body>
 </html>
+
