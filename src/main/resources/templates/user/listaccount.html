@@ -7,11 +7,13 @@
 <body>
 <div th:replace="~{base::logo}"></div>
 <div th:replace="~{base :: titulo('Find An Accountant')}"></div>
+
 	<div th:each="accountants : ${accountants}" class="container">
 	
-		<div th:text="${accountants.name}"> First Name<span> Diego</span></div>
-		<div th:text="${accountants.lastName}"> Last Name<span> Lemos</span></div>
-		<div th:text="${accountants.email}"> Email<span> exemplo@gmail.com</span></div>
+	
+		<div class="info" th:text="${accountants.name}"> First Name<span> Diego</span></div>
+		<div class="info" th:text="${accountants.lastName}"> Last Name<span> Lemos</span></div>
+		<div class="info" th:text="${accountants.email}"> Email<span> exemplo@gmail.com</span></div>
 		<div th:text="${accountants.city}"> City<span> Dublin</span></div>
 		<div th:text="${accountants.phone}"> Phone<span> 0000000001</span></div>
 		<div th:text="${accountants.specialty}"> Specialty<span> Tax return</span></div>
