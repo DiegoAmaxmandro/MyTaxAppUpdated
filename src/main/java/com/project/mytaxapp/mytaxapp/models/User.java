@@ -3,17 +3,22 @@ package com.project.mytaxapp.mytaxapp.models;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Collections;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.Length;
@@ -24,16 +29,18 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 @Table(name = "users")
 public class User implements UserDetails  {
-    @SequenceGenerator(
+    private static final long serialVersionUID = 1L;
+
+	@SequenceGenerator(
             name = "users_sequence",
             sequenceName = "users_sequence",
             allocationSize = 1
     )
+	
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "users_sequence"
-    )
+            generator = "users_sequence")
     private long id;
 
     @NotBlank(message = "First Name cannot be empty")
@@ -80,8 +87,18 @@ public class User implements UserDetails  {
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role.name());
         return Collections.singletonList(authority);
     }
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
+    private AccountantsProfile accountantsProfile;
 
-    @Override
+    public AccountantsProfile getAccountantsProfile() {
+		return accountantsProfile;
+	}
+
+	public void setAccountantsProfile(AccountantsProfile accountantsProfile) {
+		this.accountantsProfile = accountantsProfile;
+	}
+
+	@Override
     public String getPassword() {
         return password;
     }

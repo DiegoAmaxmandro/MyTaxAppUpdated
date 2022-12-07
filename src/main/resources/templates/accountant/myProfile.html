@@ -14,8 +14,10 @@
 		<img class="logo" th:src="@{/img/logo.png}" height="100" width="100">
 		<nav class="navbar">
 			<!--<p class="navitem">Welcome Back  <span sec:authentication="name"></span></p>-->
-			<a th:href="@{/user/listaccount}" class="navitem">Find An Accountant</a>
+			<a th:href="@{/accountant/dashboard}" class="navitem">Dashboard</a>
+			<a th:href="@{/accountant/profileForm}" class="navitem">New Profile</a>
 			<a th:href="@{/logout}" class="navitem">Logout</a>
+			
 		</nav>
 	
 	</header>
@@ -26,7 +28,7 @@
 		
 			<div class="name" th:text="${accountants.name} + ' ' + ${accountants.lastName}"></div>
 			<div class="info" th:text="${accountants.email}"></div>
-			<div class="info" th:text="${accountants.user}"></div>
+			<div class="info" th:text="${accountants.id}"></div>
 			<div class="info" th:text="${accountants.city}"></div>
 			<div class="info" th:text="${accountants.phone}"></div>
 			<div class="info" th:text="${accountants.specialty}"></div>
@@ -34,6 +36,8 @@
 			<div class="img"  th:text="${accountants.picture}"></div>
 			<div class="info" th:text="${accountants.price}"></div>
 			<div class="info" th:text="${accountants.aboutYou}"></div>
+			<a th:href="@{/accountant/updateProfile/{id}(id=${accountants.id})}" class="navitem">Edit</a>
+			<a th:href="@{/accountant/deleteProfile/{id}(id=${accountants.id})}" class="navitem">Delete</a>
 		
 		
 		</div>

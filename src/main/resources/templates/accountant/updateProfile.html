@@ -15,16 +15,18 @@
 		</div>
 	
 	 <div class="form">
-		<form th:object="${accProfile}" th:action="@{/accountant/saveProfile}"  method="POST" >
+		<form th:object="${accProfile}" action="@{/saveUpdateProfile}"  method="POST" >
+			<input type="hidden" th:field="*{id}">
 			<div class="form-header">
 					<div class="title">
-						<h1>Profile</h1>
+						<h1>Update</h1>
 					</div>
 					<div class="login-button">
 						<button><a th:href="@{/accountant/dashboard}">Dashboard</a></button>
 					</div>
 			</div>
 			<div class="input-group">
+			
 				<div class="input-box">
 					<label for="name">First Name</label>
 					<input th:field="*{name}"  th:errorclass="is-invalid" placeholder="first name">

@@ -17,7 +17,7 @@ public class RequestMyProfile {
 	private String email;
 	@NotBlank(message = "City cannot be empty")
 	private String city;
-	@Length(min = 10, message = "Phone should be atleast 10 number long")
+	@Length(min = 10, max = 10, message = "Phone should be atleast 10 number long")
 	private String phone;
 	@NotBlank(message = "Specialty cannot be empty")
 	private String specialty;
